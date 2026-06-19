@@ -268,3 +268,34 @@ html{
   .nav-links{ gap: 8px; }
   .nav-links a{ padding: 6px 8px; }
 }
+
+/* スマホ：ナビは1行＋横スクロール */
+@media (max-width: 520px){
+  .top-nav-inner{
+    align-items: center;
+    gap: 10px;
+  }
+
+  .brand{
+    white-space: nowrap;
+  }
+
+  .nav-links{
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    gap: 8px;
+    padding-bottom: 6px; /* スクロールバーが邪魔なら微調整 */
+  }
+
+  .nav-links a{
+    white-space: nowrap;
+    flex: 0 0 auto;
+    padding: 6px 8px;
+  }
+}
+
+/* アンカーで飛んだ時に見出しが隠れにくくする */
+.section{
+  scroll-margin-top: 72px;
+}
